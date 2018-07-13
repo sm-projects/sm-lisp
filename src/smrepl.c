@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-/* Declare a bounded buffer to store  user input. */
-static char input[2048];
+/** Requires libedit installation on Linux. */
+#include <editline/readline.h>
 
 int main( int argc, char** argv ) {
     puts("SM Lispy Version 0.0.1\n");
@@ -9,11 +10,13 @@ int main( int argc, char** argv ) {
 
     /** Loop forever until user presses ctrl-c */
     while(1) {
-        fputs("lispy> ",stdout);
-        /** Read a line of user input from the terminal. */
-        fgets(input, 2048, stdin);
-        /** Echo the input back to the user. */
+        //Out prompt and get input from console
+        char*  input = readline("lispy:> ");
+        //Add input to history
+        add_history(input);
+        //Echo back the input
         printf("You entered:%s\n ", input);
+        free(input);
     }
     return 0;
 
