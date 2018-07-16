@@ -9,3 +9,6 @@ install:
 	cd src && $(MAKE) $@
 
 .PHONY: install
+
+clean:
+	cd src && rm -f prompt
