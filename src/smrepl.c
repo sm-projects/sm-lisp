@@ -4,9 +4,13 @@
 /** Requires libedit installation on Linux. */
 #include <editline/readline.h>
 
+#define RED  "\033[1;31m"
+
 int main( int argc, char** argv ) {
+    printf(RED);
     puts("SM Lispy Version 0.0.1\n");
     puts("Press ctrc-C to exit \n");
+     printf("\033[0m;");
 
     /** Loop forever until user presses ctrl-c */
     while(1) {
