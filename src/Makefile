@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -std=c99 -Wall -g
 LFLAGS = -ledit
-FILES = smrepl.c
+FILES = mpc.c smrepl.c
 PLATFORM = $(shell uname)
 BINARY = prompt
 
