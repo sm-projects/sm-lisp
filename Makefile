@@ -10,5 +10,8 @@ install:
 
 .PHONY: install
 
+run:
+	src/smlispy
+
 clean:
-	cd src && rm -f prompt
+	cd src && rm -f smlispy
