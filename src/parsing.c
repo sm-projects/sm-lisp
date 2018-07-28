@@ -5,10 +5,11 @@
 #include <editline/readline.h>
 
 #include "mpc.h"
+#include "eval.h"
 
 #define RED  "\033[1;31m"
 
-/* Dsplays the prompt for the repl. */
+/* Displays the prompt for the repl. */
 int display_prompt();
 
 int main( int argc, char** argv ) {
@@ -42,12 +43,17 @@ int main( int argc, char** argv ) {
         /** Now parse the user input for lispy calculator. */
         mpc_result_t r;
         if (mpc_parse("<stdin>",input,Lispy,&r)) {
+            lval result = eval(r.output);
+            lval_println(result);
             //On sucess print and delete the AST
             mpc_ast_print(r.output);
             mpc_ast_delete(r.output);
         } else {
+            printf("DEBUG: Reached here.\n");
             mpc_err_print(r.output);
+            printf("DEBUG: Reached here.\n");
             mpc_ast_delete(r.output);
+
 
         }
         //Echo back the input
