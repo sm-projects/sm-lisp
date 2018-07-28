@@ -1,4 +1,5 @@
-# Changelog
+# Changelog for sm-lisp project
+
 All notable changes to this project will be documented in this file.
 
 # Types of changes
@@ -9,9 +10,8 @@ All notable changes to this project will be documented in this file.
 - Fixed for any bug fixes.
 - Security in case of vulnerabilities.
 
-
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+> The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+> and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
